@@ -1,0 +1,73 @@
+# Path to your oh-my-zsh configuration.
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+export ZSH_THEME="prose"
+#export ZSH_THEME="robbyrussell"
+#export ZSH_THEME="random"
+
+# Set to this to use case-sensitive completion
+# export CASE_SENSITIVE="true"
+
+# Comment this out to disable weekly auto-update checks
+# export DISABLE_AUTO_UPDATE="true"
+
+# Uncomment following line if you want to disable colors in ls
+# export DISABLE_LS_COLORS="true"
+
+# Uncomment following line if you want to disable autosetting terminal title.
+# export DISABLE_AUTO_TITLE="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git vi-mode)
+
+source $ZSH/oh-my-zsh.sh
+
+# Customize to your needs...
+# remove hg prompt
+#PROMPT='
+#%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}$(box_name)%{$reset_color%} in %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)
+#$(virtualenv_info)$ '
+#
+#colors for less and man
+#from http://muhas.ru/?p=181
+export LESS_TERMCAP_mb=$'\E[01;31m'       # начала мигающего
+export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # начало жирного текста
+export LESS_TERMCAP_me=$'\E[0m'           # окончание
+export LESS_TERMCAP_so=$'\E[38;5;246m'    # начала текста в инфобоксе
+export LESS_TERMCAP_se=$'\E[0m'           # конец его
+export LESS_TERMCAP_us=$'\E[04;38;5;146m' # начало подчеркнутого
+export LESS_TERMCAP_ue=$'\E[0m'           # конец подчеркнутого
+
+#git aliases (git plugin)
+# g='git'
+# gst='git status'
+# gl='git pull'
+# gco='git checkout'
+# gcm='git checkout master'
+# gb='git branch'
+# ga='git add'
+#
+# gup='git fetch && git rebase'
+# gp='git push'
+# gc='git commit -v'
+# gca='git commit -v -a'
+# gba='git branch -a'
+# gcount='git shortlog -sn'
+# gcp='git cherry-pick'
+# glg='git log --stat --max-count=5'
+# glgg='git log --graph --max-count=5'
+# gss='git status -s'
+# gm='git merge'
+# grh='git reset HEAD'
+# grhh='git reset HEAD --hard'
+# ggpull='git pull origin $(current_branch)'
+# ggpush='git push origin $(current_branch)'
+# ggpnp='git pull origin $(current_branch) && git push origin $(current_branch)'
+
+alias gpo='git push origin HEAD'
+
