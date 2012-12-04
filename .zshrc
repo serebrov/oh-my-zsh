@@ -68,6 +68,24 @@ export LESS_TERMCAP_ue=$'\E[0m'           # конец подчеркнутог�
 # ggpull='git pull origin $(current_branch)'
 # ggpush='git push origin $(current_branch)'
 # ggpnp='git pull origin $(current_branch) && git push origin $(current_branch)'
-
 alias gpo='git push origin HEAD'
 
+# http://unix.stackexchange.com/questions/16101/zsh-search-history-on-up-and-down-keys
+up-line-or-search-prefix () {
+  local CURSOR_before_search=$CURSOR
+  zle up-line-or-search "$LBUFFER"
+  CURSOR=$CURSOR_before_search
+}
+zle -N up-line-or-search-prefix
+
+#up-line-or-history-beginning-search () {
+  #if [[ -n $PREBUFFER ]]; then
+    #zle up-line-or-history
+  #else
+    #zle history-beginning-search-backward
+  #fi
+#}
+#zle -N up-line-or-history-beginning-search
+
+bindkey '^[[A' up-line-or-search-prefix
+bindkey '^[[B' down-line-or-search
