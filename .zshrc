@@ -69,7 +69,7 @@ export LESS_TERMCAP_ue=$'\E[0m'           # конец подчеркнутог�
 # ggpush='git push origin $(current_branch)'
 # ggpnp='git pull origin $(current_branch) && git push origin $(current_branch)'
 alias gpo='git push origin HEAD'
-alias puc='phpunit --colors'
+alias -g puc='phpunit --colors'
 
 # http://unix.stackexchange.com/questions/16101/zsh-search-history-on-up-and-down-keys
 up-line-or-search-prefix () {
