@@ -90,3 +90,19 @@ zle -N up-line-or-search-prefix
 
 bindkey '^[[A' up-line-or-search-prefix
 bindkey '^[[B' down-line-or-search
+
+# http://stackoverflow.com/questions/8343166/filemanager-for-vim
+vc () 
+{ 
+    local TARGET='';
+
+    [ -z "$@" ] && TARGET=. || TARGET="$@";
+    vim \
+    -c "set cursorline" \
+    -c vsplit \
+    -c "normal gh" \
+    -c "let &titlestring=\"netrw\"" \
+    -c "set acd" "$TARGET";
+
+    return 0
+}
