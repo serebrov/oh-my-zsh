@@ -71,6 +71,9 @@ export LESS_TERMCAP_ue=$'\E[0m'           # конец подчеркнутог�
 alias gpo='git push origin HEAD'
 alias -g puc='phpunit --colors'
 
+# Ctrl-R to start incremental history search
+bindkey "^R" history-incremental-search-backward
+
 # http://unix.stackexchange.com/questions/16101/zsh-search-history-on-up-and-down-keys
 up-line-or-search-prefix () {
   local CURSOR_before_search=$CURSOR
@@ -78,18 +81,25 @@ up-line-or-search-prefix () {
   CURSOR=$CURSOR_before_search
 }
 zle -N up-line-or-search-prefix
+down-line-or-search-prefix () {
+  local CURSOR_before_search=$CURSOR
+  zle down-line-or-search "$LBUFFER"
+  CURSOR=$CURSOR_before_search
+}
+zle -N down-line-or-search-prefix
 
-#up-line-or-history-beginning-search () {
-  #if [[ -n $PREBUFFER ]]; then
-    #zle up-line-or-history
-  #else
-    #zle history-beginning-search-backward
-  #fi
-#}
-#zle -N up-line-or-history-beginning-search
+##up-line-or-history-beginning-search () {
+  ##if [[ -n $PREBUFFER ]]; then
+    ##zle up-line-or-history
+  ##else
+    ##zle history-beginning-search-backward
+  ##fi
+##}
+##zle -N up-line-or-history-beginning-search
 
 bindkey '^[[A' up-line-or-search-prefix
-bindkey '^[[B' down-line-or-search
+bindkey '^[[B' down-line-or-search-prefix
+#bindkey '^[[B' down-line-or-search
 
 # http://stackoverflow.com/questions/8343166/filemanager-for-vim
 vc () 
