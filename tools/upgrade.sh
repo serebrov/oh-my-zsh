@@ -1,8 +1,5 @@
-current_path=`pwd`
-#current_path=${current_path/ /\\ }
 printf '\033[0;34m%s\033[0m\n' "Upgrading Oh My Zsh"
 cd "$ZSH"
-
 echo $ZSH
 echo `pwd`
 git status
@@ -22,4 +19,3 @@ else
   printf '\033[0;31m%s\033[0m\n' 'There was an error updating. Try again later?'
 fi
 
-cd "$current_path"
