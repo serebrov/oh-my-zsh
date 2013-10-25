@@ -68,8 +68,8 @@ export LESS_TERMCAP_ue=$'\E[0m'           # конец подчеркнутог�
 # ggpull='git pull origin $(current_branch)'
 # ggpush='git push origin $(current_branch)'
 # ggpnp='git pull origin $(current_branch) && git push origin $(current_branch)'
-alias gpo='git push origin HEAD'
 alias -g puc='phpunit --colors'
+alias gpoh='git push origin HEAD'
 # View abbreviated SHA, description, history graph, time and author
 alias glog='git log --color --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --'
 
