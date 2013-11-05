@@ -43,6 +43,10 @@ export LESS_TERMCAP_se=$'\E[0m'           # конец его
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # начало подчеркнутого
 export LESS_TERMCAP_ue=$'\E[0m'           # конец подчеркнутого
 
+# no lag on normal / insert mode switch
+# see http://dougblack.io/words/zsh-vi-mode.html
+export KEYTIMEOUT=1
+
 #git aliases (git plugin)
 # g='git'
 # gst='git status'
