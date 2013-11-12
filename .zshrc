@@ -26,6 +26,8 @@ export ZSH_THEME="prose"
 plugins=(git vi-mode last-working-dir)
 
 source $ZSH/oh-my-zsh.sh
+source $ZSH/opp_vim_text_objects/opp.zsh
+source $ZSH/opp_vim_text_objects/opp/*.zsh
 
 # Customize to your needs...
 # remove hg prompt
