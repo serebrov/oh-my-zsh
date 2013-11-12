@@ -5,7 +5,7 @@ echo `pwd`
 git status
 git remote add upstream git://github.com/robbyrussell/oh-my-zsh.git
 
-if git pull --rebase origin master && git fetch upstream -v && git merge upstream/master
+if git pull --rebase origin master && git fetch upstream -v && git merge upstream/master && git submodule init && git submodule update
 then
   printf '\033[0;32m%s\033[0m\n' '         __                                     __   '
   printf '\033[0;32m%s\033[0m\n' '  ____  / /_     ____ ___  __  __   ____  _____/ /_  '
