@@ -49,6 +49,8 @@ export LESS_TERMCAP_ue=$'\E[0m'           # конец подчеркнутог�
 # see http://dougblack.io/words/zsh-vi-mode.html
 export KEYTIMEOUT=1
 
+export TERM=xterm-256color
+
 #git aliases (git plugin)
 # g='git'
 # gst='git status'
@@ -124,3 +126,4 @@ vc ()
 
     return 0
 }
+
