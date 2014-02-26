@@ -23,7 +23,7 @@ export ZSH_THEME="prose"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git vi-mode last-working-dir)
+plugins=(git git-prompt vi-mode last-working-dir)
 
 source $ZSH/oh-my-zsh.sh
 source $ZSH/opp_vim_text_objects/opp.zsh
@@ -35,6 +35,10 @@ source $ZSH/opp_vim_text_objects/opp/*.zsh
 #%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}$(box_name)%{$reset_color%} in %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)
 #$(virtualenv_info)$ '
 #
+PROMPT='
+%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}$(box_name)%{$reset_color%} %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(prompt_git_info)
+$(virtualenv_info)$ '
+
 #colors for less and man
 #from http://muhas.ru/?p=181
 export LESS_TERMCAP_mb=$'\E[01;31m'       # начала мигающего
