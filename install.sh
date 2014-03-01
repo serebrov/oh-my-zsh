@@ -7,6 +7,9 @@ sudo apt-get install git-core git-doc git-gui
 # zsh
 sudo apt-get install zsh zsh-doc
 
+# tmux
+sudo apt-get install tmux
+
 # vim
 # https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
 sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
@@ -32,6 +35,10 @@ sudo apt-get update
 sudo apt-get install oracle-java7-installer
 
 #i3
+sudo echo "deb http://debian.sur5r.net/i3/ $(lsb_release -c -s) universe" >> /etc/apt/sources.list
+sudo apt-get update
+sudo apt-get --allow-unauthenticated install sur5r-keyring
+sudo apt-get update
 sudo apt-get install i3
 sudo apt-get install classicmenu-indicator feh     
 
@@ -41,7 +48,10 @@ sudo apt-get install nodejs
 sudo apt-get install redis-server
 
 #apache, php, mysql
-sudo apt-get install apache2 php5 php5-dev php5-gd php5-curl php5-json php5-mysql php5-xdebug mysql-server-5.1 php-pear 
+sudo apt-get install apache2
+sudo apt-get install php5 php5-dev php5-gd php5-curl php5-json php5-mysql php5-xdebug php-pear
+sudo apt-get install phpunit phpunit-mock-object phpunit-selenium phpunit-story
+sudo apt-get install mysql-server-5.1
 
 sudo adduser $USER www-data
 sudo adduser www-data $USER
