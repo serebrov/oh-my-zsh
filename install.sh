@@ -18,6 +18,8 @@ libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev ruby-dev mercurial
 
 sudo apt-get install checkinstall
 
+sudo apt-get install ctags cmake
+
 # run ~/.vim/vim-update.sh
 
 # google chrome
