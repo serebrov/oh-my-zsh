@@ -53,7 +53,7 @@ sudo apt-get install redis-server
 sudo apt-get install apache2
 sudo apt-get install php5 php5-dev php5-gd php5-curl php5-json php5-mysql php5-xdebug php-pear
 sudo apt-get install phpunit phpunit-mock-object phpunit-selenium phpunit-story
-sudo apt-get install mysql-server-5.1
+sudo apt-get install mysql-server
 
 sudo adduser $USER www-data
 sudo adduser www-data $USER
