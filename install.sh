@@ -36,12 +36,13 @@ sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install oracle-java7-installer
 
-#i3
+#i3 + gnome3
+# http://blog.hugochinchilla.net/2013/03/using-gnome-3-with-i3-window-manager/
 sudo echo "deb http://debian.sur5r.net/i3/ $(lsb_release -c -s) universe" >> /etc/apt/sources.list
 sudo apt-get update
 sudo apt-get --allow-unauthenticated install sur5r-keyring
 sudo apt-get update
-sudo apt-get install i3
+sudo apt-get install gnome-session gnome-settings-daemon gnome-panel i3
 sudo apt-get install classicmenu-indicator feh     
 
 #node
