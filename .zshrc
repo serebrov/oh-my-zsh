@@ -144,3 +144,6 @@ fancy-ctrl-z () {
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
+
+# added by travis gem
+[ -f /home/seb/.travis/travis.sh ] && source /home/seb/.travis/travis.sh
