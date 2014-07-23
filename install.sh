@@ -27,8 +27,8 @@ sudo apt-get install ctags cmake
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 sudo apt-get update
-# sudo apt-get install google-chrome-stable
-sudo apt-get install google-chrome-beta
+sudo apt-get install google-chrome-stable
+#sudo apt-get install google-chrome-beta
 
 # Oracle java
 # http://www.webupd8.org/2012/01/install-oracle-java-jdk-7-in-ubuntu-via.html
@@ -49,10 +49,12 @@ sudo apt-get install classicmenu-indicator feh
 sudo apt-get install nodejs 
 #redis
 sudo apt-get install redis-server
+#varnish
+sudo apt-get install redis-server
 
 #apache, php, mysql
 sudo apt-get install apache2
-sudo apt-get install php5 php5-dev php5-gd php5-curl php5-json php5-mysql php5-xdebug php-pear
+sudo apt-get install php5 php5-dev php5-gd php5-curl php5-json php5-mysql php5-xdebug
 sudo apt-get install phpunit phpunit-mock-object phpunit-selenium phpunit-story
 sudo apt-get install mysql-server
 
