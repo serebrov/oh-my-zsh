@@ -48,7 +48,7 @@ sudo apt-get -y install gnome-session gnome-settings-daemon gnome-panel i3
 sudo apt-get -y install classicmenu-indicator feh     
 
 #node
-sudo apt-get -y install nodejs 
+sudo apt-get -y install nodejs npm nodejs-legacy
 #redis
 sudo apt-get -y install redis-server
 #varnish
