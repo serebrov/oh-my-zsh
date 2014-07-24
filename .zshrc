@@ -23,7 +23,7 @@ export ZSH_THEME="prose"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-prompt vi-mode last-working-dir)
+plugins=(git git-prompt vi-mode last-working-dir ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 source $ZSH/opp_vim_text_objects/opp.zsh
