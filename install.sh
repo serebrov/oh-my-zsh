@@ -37,6 +37,8 @@ sudo apt-get -y install google-chrome-stable
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get -y install oracle-java7-installer
+sudo mkdir /opt/google/chrome/plugins
+sudo ln -s /usr/lib/jvm/java-7-oracle/jre/lib/amd64/libnpjp2.so /opt/google/chrome/plugins/libnpjp2.so
 
 #i3 + gnome3
 # http://blog.hugochinchilla.net/2013/03/using-gnome-3-with-i3-window-manager/
