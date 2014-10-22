@@ -147,3 +147,5 @@ bindkey '^Z' fancy-ctrl-z
 
 # added by travis gem
 [ -f /home/seb/.travis/travis.sh ] && source /home/seb/.travis/travis.sh
+# gvm
+#[[ -s "/home/seb/.gvm/scripts/gvm" ]] && source "/home/seb/.gvm/scripts/gvm"
