@@ -49,6 +49,13 @@ sudo apt-get update
 sudo apt-get -y install gnome-session gnome-settings-daemon gnome-panel i3
 sudo apt-get -y install classicmenu-indicator feh curl
 
+#renameutils - Programs to make file renaming easier
+#http://www.nongnu.org/renameutils/
+sudo apt-get -y install renameutils
+
+#ag - the silver searcher
+sudo apt-get install silversearcher-ag
+
 #node
 sudo apt-get -y install nodejs npm nodejs-legacy
 #redis
