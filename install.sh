@@ -52,6 +52,8 @@ sudo apt-get -y install classicmenu-indicator feh curl
 #renameutils - Programs to make file renaming easier
 #http://www.nongnu.org/renameutils/
 sudo apt-get -y install renameutils
+#https://joeyh.name/code/moreutils/
+sudo apt-get -y install moreutils
 
 #ag - the silver searcher
 sudo apt-get install silversearcher-ag
