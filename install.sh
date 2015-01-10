@@ -56,7 +56,16 @@ sudo apt-get -y install renameutils
 sudo apt-get -y install moreutils
 
 #ag - the silver searcher
-sudo apt-get install silversearcher-ag
+#repo version is too old
+#sudo apt-get install silversearcher-ag
+mkdir -p ~/ag_build
+pushd ~/ag_build
+  sudo apt-get install -y automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev
+  git clone git@github.com:ggreer/the_silver_searcher.git
+  cd the_silver_searcher
+  ./build.sh
+  sudo make install
+popd
 
 #node
 sudo apt-get -y install nodejs npm nodejs-legacy
