@@ -11,19 +11,18 @@ export ZSH_THEME="prose"
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
-
 # Comment this out to disable weekly auto-update checks
 # export DISABLE_AUTO_UPDATE="true"
-
 # Uncomment following line if you want to disable colors in ls
 # export DISABLE_LS_COLORS="true"
-
 # Uncomment following line if you want to disable autosetting terminal title.
 # export DISABLE_AUTO_TITLE="true"
 
+export ZSH_TMUX_AUTOSTART=true
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-prompt vi-mode last-working-dir ssh-agent)
+plugins=(git git-prompt vi-mode last-working-dir ssh-agent colored-man common-alias cp pip tmux virtualenvwrapper z)
 
 source $ZSH/oh-my-zsh.sh
 source $ZSH/opp_vim_text_objects/opp.zsh
@@ -41,19 +40,123 @@ $(virtualenv_info)$ '
 
 #colors for less and man
 #from http://muhas.ru/?p=181
-export LESS_TERMCAP_mb=$'\E[01;31m'       # начала мигающего
-export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # начало жирного текста
-export LESS_TERMCAP_me=$'\E[0m'           # окончание
-export LESS_TERMCAP_so=$'\E[38;5;246m'    # начала текста в инфобоксе
-export LESS_TERMCAP_se=$'\E[0m'           # конец его
-export LESS_TERMCAP_us=$'\E[04;38;5;146m' # начало подчеркнутого
-export LESS_TERMCAP_ue=$'\E[0m'           # конец подчеркнутого
+# export LESS_TERMCAP_mb=$'\E[01;31m'       # начала мигающего
+# export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # начало жирного текста
+# export LESS_TERMCAP_me=$'\E[0m'           # окончание
+# export LESS_TERMCAP_so=$'\E[38;5;246m'    # начала текста в инфобоксе
+# export LESS_TERMCAP_se=$'\E[0m'           # конец его
+# export LESS_TERMCAP_us=$'\E[04;38;5;146m' # начало подчеркнутого
+# export LESS_TERMCAP_ue=$'\E[0m'           # конец подчеркнутого
 
 # no lag on normal / insert mode switch
 # see http://dougblack.io/words/zsh-vi-mode.html
 export KEYTIMEOUT=1
 
-export TERM=xterm-256color
+#use tmux plugin
+#export TERM=xterm-256color
+# tmux plugin aliases
+# alias ta='tmux attach -t'
+# alias ts='tmux new-session -s'
+# alias tl='tmux list-sessions'
+# alias tksv='tmux kill-server'
+# alias tkss='tmux kill-session -t'
+
+# z plugin - jump to most recent matching dir
+# z foo         cd to most frecent dir matching foo
+# z foo bar     cd to most frecent dir matching foo and bar
+# z -r foo      cd to highest ranked dir matching foo
+# z -t foo      cd to most recently accessed dir matching foo
+# z -l foo      list all dirs matching foo (by frecency)
+
+#cp plugin
+#  copy with rsync, show progress
+
+#common aliases (common-aliases plugin)
+# ls, the common ones I use a lot shortened for rapid fire usage
+# alias l='ls -lFh'     #size,show type,human readable
+# alias la='ls -lAFh'   #long list,show almost all,show type,human readable
+# alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
+# alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
+# alias ll='ls -l'      #long list
+# alias ldot='ls -ld .*'
+# alias lS='ls -1FSsh'
+# alias lart='ls -1Fcart'
+# alias lrt='ls -1Fcrt'
+
+# alias zshrc='vim ~/.zshrc' # Quick access to the ~/.zshrc file
+
+# alias grep='grep --color'
+# alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
+
+# alias t='tail -f'
+
+# # because typing 'cd' is A LOT of work!!
+# alias ..='cd ../'
+# alias ...='cd ../../'
+# alias ....='cd ../../../'
+# alias .....='cd ../../../../'
+
+# # Command line head / tail shortcuts
+# alias -g H='| head'
+# alias -g T='| tail'
+# alias -g G='| grep'
+# alias -g L="| less"
+# alias -g M="| most"
+# alias -g LL="2>&1 | less"
+# alias -g CA="2>&1 | cat -A"
+# alias -g NE="2> /dev/null"
+# alias -g NUL="> /dev/null 2>&1"
+# alias -g P="2>&1| pygmentize -l pytb"
+
+# alias dud='du -d 1 -h'
+# alias duf='du -sh *'
+# alias fd='find . -type d -name'
+# alias ff='find . -type f -name'
+
+# alias h='history'
+# alias hgrep="fc -El 0 | grep"
+# alias help='man'
+# alias p='ps -f'
+# alias sortnr='sort -n -r'
+# alias unexport='unset'
+
+# alias whereami=display_info
+
+# alias rm='rm -i'
+# alias cp='cp -i'
+# alias mv='mv -i'
+
+# zsh is able to auto-do some kungfoo
+# depends on the SUFFIX :)
+if [ ${ZSH_VERSION//\./} -ge 420 ]; then
+  # open browser on urls
+  _browser_fts=(htm html de org net com at cx nl se dk dk php)
+  for ft in $_browser_fts ; do alias -s $ft=$BROWSER ; done
+
+  _editor_fts=(cpp cxx cc c hh h inl asc txt TXT tex)
+  for ft in $_editor_fts ; do alias -s $ft=$EDITOR ; done
+
+  _image_fts=(jpg jpeg png gif mng tiff tif xpm)
+  for ft in $_image_fts ; do alias -s $ft=$XIVIEWER; done
+
+  _media_fts=(ape avi flv mkv mov mp3 mpeg mpg ogg ogm rm wav webm)
+  for ft in $_media_fts ; do alias -s $ft=mplayer ; done
+
+  #read documents
+  alias -s pdf=acroread
+  alias -s ps=gv
+  alias -s dvi=xdvi
+  alias -s chm=xchm
+  alias -s djvu=djview
+
+  #list whats inside packed file
+  alias -s zip="unzip -l"
+  alias -s rar="unrar l"
+  alias -s tar="tar tf"
+  alias -s tar.gz="echo "
+  alias -s ace="unace l"
+fi
+
 
 #git aliases (git plugin)
 # g='git'
