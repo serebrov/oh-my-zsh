@@ -18,7 +18,10 @@ export ZSH_THEME="prose"
 # Uncomment following line if you want to disable autosetting terminal title.
 # export DISABLE_AUTO_TITLE="true"
 
+export TERM=xterm-256color
 export ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_AUTOSTART_ONCE=true
+export ZSH_TMUX_AUTOCONNECT=false
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -52,8 +55,6 @@ $(virtualenv_info)$ '
 # see http://dougblack.io/words/zsh-vi-mode.html
 export KEYTIMEOUT=1
 
-#use tmux plugin
-#export TERM=xterm-256color
 # tmux plugin aliases
 # alias ta='tmux attach -t'
 # alias ts='tmux new-session -s'
@@ -247,6 +248,11 @@ fancy-ctrl-z () {
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
+
+# https://twitter.com/climagic/status/551435572490010624
+# same can be done using VLC => vlc v4l2:///dev/video0
+# Use your webcam and mplayer as a mirror with this function.
+mirror(){ mplayer -vf mirror -v tv:// -tv device=/dev/video0:driver=v4l2; }
 
 # added by travis gem
 [ -f /home/seb/.travis/travis.sh ] && source /home/seb/.travis/travis.sh
