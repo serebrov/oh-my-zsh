@@ -149,3 +149,6 @@ bindkey '^Z' fancy-ctrl-z
 [ -f /home/seb/.travis/travis.sh ] && source /home/seb/.travis/travis.sh
 # gvm
 #[[ -s "/home/seb/.gvm/scripts/gvm" ]] && source "/home/seb/.gvm/scripts/gvm"
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/web
+source /usr/local/bin/virtualenvwrapper.sh
