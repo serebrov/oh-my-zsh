@@ -19,13 +19,14 @@ export ZSH_THEME="prose"
 # export DISABLE_AUTO_TITLE="true"
 
 export TERM=xterm-256color
-export ZSH_TMUX_AUTOSTART=true
-export ZSH_TMUX_AUTOSTART_ONCE=true
-export ZSH_TMUX_AUTOCONNECT=false
+# export ZSH_TMUX_AUTOSTART=true
+# export ZSH_TMUX_AUTOSTART_ONCE=true
+# export ZSH_TMUX_AUTOCONNECT=false
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-prompt vi-mode last-working-dir ssh-agent colored-man common-alias cp pip tmux virtualenvwrapper z)
+#plugins=(git git-prompt vi-mode last-working-dir ssh-agent colored-man common-alias cp pip tmux z)
+plugins=(git git-prompt vi-mode last-working-dir ssh-agent colored-man common-alias cp pip z) #tmux
 
 source $ZSH/oh-my-zsh.sh
 source $ZSH/opp_vim_text_objects/opp.zsh
