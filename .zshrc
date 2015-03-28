@@ -262,3 +262,5 @@ mirror(){ mplayer -vf mirror -v tv:// -tv device=/dev/video0:driver=v4l2; }
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/web
 source /usr/local/bin/virtualenvwrapper.sh
+
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
