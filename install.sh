@@ -67,6 +67,15 @@ pushd ~/ag_build
   sudo make install
 popd
 
+# fzf - command-line fuzzy finder
+# CTRL-T - Paste the selected file path(s) into the command line
+# CTRL-R - Paste the selected command from history into the command line
+# - Sort is disabled by default to respect chronological ordering
+# - Press CTRL-R again to toggle sort
+# ALT-C - cd into the selected directory
+git clone https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
 #node
 sudo apt-get -y install nodejs npm nodejs-legacy
 #redis

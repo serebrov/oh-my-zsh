@@ -264,3 +264,5 @@ export PROJECT_HOME=$HOME/web
 source /usr/local/bin/virtualenvwrapper.sh
 
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='ag -l -g ""'
