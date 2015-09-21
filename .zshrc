@@ -38,9 +38,9 @@ source $ZSH/opp_vim_text_objects/opp/*.zsh
 #%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}$(box_name)%{$reset_color%} in %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)
 #$(virtualenv_info)$ '
 #
-PROMPT='
-%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}$(box_name)%{$reset_color%} %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(prompt_git_info)
-$(virtualenv_info)$ '
+# PROMPT='
+# %{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}$(box_name)%{$reset_color%} %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(prompt_git_info)
+# $(virtualenv_info)$ '
 
 #colors for less and man
 #from http://muhas.ru/?p=181
