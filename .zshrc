@@ -18,7 +18,7 @@ export ZSH_THEME="prose"
 # Uncomment following line if you want to disable autosetting terminal title.
 # export DISABLE_AUTO_TITLE="true"
 
-export TERM=xterm-256color
+# export TERM=xterm-256color
 # export ZSH_TMUX_AUTOSTART=true
 # export ZSH_TMUX_AUTOSTART_ONCE=true
 # export ZSH_TMUX_AUTOCONNECT=false
@@ -263,6 +263,11 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/web
 source /usr/local/bin/virtualenvwrapper.sh
 
-export NVIM_TUI_ENABLE_TRUE_COLOR=1
+#export NVIM_TUI_ENABLE_TRUE_COLOR=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
+source ~/.i3/keyboard-setup.sh
