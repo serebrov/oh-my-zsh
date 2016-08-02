@@ -207,15 +207,6 @@ down-line-or-search-prefix () {
 }
 zle -N down-line-or-search-prefix
 
-##up-line-or-history-beginning-search () {
-  ##if [[ -n $PREBUFFER ]]; then
-    ##zle up-line-or-history
-  ##else
-    ##zle history-beginning-search-backward
-  ##fi
-##}
-##zle -N up-line-or-history-beginning-search
-
 bindkey '^[[A' up-line-or-search-prefix
 bindkey '^[[B' down-line-or-search-prefix
 #bindkey '^[[B' down-line-or-search
