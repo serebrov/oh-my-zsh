@@ -26,7 +26,7 @@ export ZSH_THEME="prose"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 #plugins=(git git-prompt vi-mode last-working-dir ssh-agent colored-man common-alias cp pip tmux z)
-plugins=(git git-prompt vi-mode last-working-dir ssh-agent colored-man common-alias cp pip z) #tmux
+plugins=(git git-prompt vi-mode last-working-dir ssh-agent colored-man common-alias cp pip z history-substring-search) #tmux
 
 source $ZSH/oh-my-zsh.sh
 source $ZSH/opp_vim_text_objects/opp.zsh
@@ -193,23 +193,22 @@ alias glog='git log --color --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%
 # Ctrl-R to start incremental history search
 bindkey "^R" history-incremental-search-backward
 
+# Replaced with history-substring-search plugin
 # http://unix.stackexchange.com/questions/16101/zsh-search-history-on-up-and-down-keys
-up-line-or-search-prefix () {
-  local CURSOR_before_search=$CURSOR
-  zle up-line-or-search "$LBUFFER"
-  CURSOR=$CURSOR_before_search
-}
-zle -N up-line-or-search-prefix
-down-line-or-search-prefix () {
-  local CURSOR_before_search=$CURSOR
-  zle down-line-or-search "$LBUFFER"
-  CURSOR=$CURSOR_before_search
-}
-zle -N down-line-or-search-prefix
-
-bindkey '^[[A' up-line-or-search-prefix
-bindkey '^[[B' down-line-or-search-prefix
-#bindkey '^[[B' down-line-or-search
+# up-line-or-search-prefix () {
+#   local CURSOR_before_search=$CURSOR
+#   zle up-line-or-search "$LBUFFER"
+#   CURSOR=$CURSOR_before_search
+# }
+# zle -N up-line-or-search-prefix
+# down-line-or-search-prefix () {
+#   local CURSOR_before_search=$CURSOR
+#   zle down-line-or-search "$LBUFFER"
+#   CURSOR=$CURSOR_before_search
+# }
+# zle -N down-line-or-search-prefix
+## bindkey '^[[A' up-line-or-search-prefix
+## bindkey '^[[B' down-line-or-search-prefix
 
 # http://stackoverflow.com/questions/8343166/filemanager-for-vim
 vc () 
@@ -262,3 +261,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 source ~/.i3/keyboard-setup.sh
+
+# vim as man pager
+export MANPAGER="env MAN_PN=1 vim -M +MANPAGER -"
