@@ -25,6 +25,9 @@ export ZSH_THEME="prose"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
+#
+# cp - add cpv command (runs rsync with progress)
+#
 #plugins=(git git-prompt vi-mode last-working-dir ssh-agent colored-man common-alias cp pip tmux z)
 plugins=(git git-prompt vi-mode last-working-dir ssh-agent colored-man common-alias cp pip z history-substring-search) #tmux
 
@@ -186,9 +189,10 @@ fi
 # ggpush='git push origin $(current_branch)'
 # ggpnp='git pull origin $(current_branch) && git push origin $(current_branch)'
 alias -g puc='phpunit --colors'
+alias -g gst='git status --short --branch'
 alias gpoh='git push origin HEAD'
 # View abbreviated SHA, description, history graph, time and author
-alias glog='git log --color --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --'
+alias glog='git log --color --graph --date=iso --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset" --abbrev-commit --'
 
 # Ctrl-R to start incremental history search
 bindkey "^R" history-incremental-search-backward
@@ -264,3 +268,18 @@ source ~/.i3/keyboard-setup.sh
 
 # vim as man pager
 export MANPAGER="env MAN_PN=1 vim -M +MANPAGER -"
+
+# Codi - vim plugin
+# See: https://github.com/metakirby5/codi.vim
+# Usage: codi [filetype] [filename]
+codi() {
+  local syntax="${1:-python}"
+  shift
+  vim -c \
+    "let g:startify_disable_at_vimenter = 1 |\
+    set bt=nofile ls=0 noru nonu nornu |\
+    hi ColorColumn ctermbg=NONE |\
+    hi VertSplit ctermbg=NONE |\
+    hi NonText ctermfg=0 |\
+    Codi $syntax" "$@"
+}
