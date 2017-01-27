@@ -291,7 +291,8 @@ cf() {
 # with ag - respects .agignore and .gitignore
 alias ag_fzf='ag --nobreak --nonumbers --noheading . | fzf'
 
-# fshow - git commit browser
+# http://junegunn.kr/2015/03/browsing-git-commits-with-fzf/
+# fshow - git commit browser (enter for show, ctrl-s toggles sort)
 fshow() {
   git log --graph --color=always \
       --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
@@ -365,6 +366,13 @@ fstash() {
       git stash show -p $sha
     fi
   done
+}
+
+# like normal z when used with arguments but displays an fzf prompt when used without
+unalias z 2> /dev/null
+z() {
+  [ $# -gt 0 ] && _z "$*" && return
+  cd "$(_z -l 2>&1 | fzf-tmux +s --tac --query "$*" | sed 's/^[0-9,.]* *//')"
 }
 
 export NVM_DIR="$HOME/.nvm"
