@@ -165,8 +165,14 @@ if [ ${ZSH_VERSION//\./} -ge 420 ]; then
 fi
 
 
-#git aliases (git plugin)
+### git aliases (git plugin)
 # g='git'
+#
+# ga='git add'
+# gaa='git add --all'
+# gapa='git add --patch'
+# gau='git add --update'
+#
 # gst='git status'
 # gl='git pull'
 # gco='git checkout'
