@@ -28,8 +28,10 @@ export ZSH_THEME="prose"
 #
 # cp - add cpv command (runs rsync with progress)
 #
+# dotenv - Automatically load your project ENV variables from `.env` file when you `cd` into project root directory.
+#
 #plugins=(git git-prompt vi-mode last-working-dir ssh-agent colored-man common-alias cp pip tmux z)
-plugins=(git git-prompt vi-mode last-working-dir ssh-agent colored-man common-alias cp pip z history-substring-search) #tmux
+plugins=(git git-prompt vi-mode last-working-dir ssh-agent colored-man common-alias cp pip z history-substring-search dotenv) #tmux
 
 source $ZSH/oh-my-zsh.sh
 source $ZSH/opp_vim_text_objects/opp.zsh
