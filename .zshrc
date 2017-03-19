@@ -6,8 +6,6 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 export ZSH_THEME="prose"
-#export ZSH_THEME="robbyrussell"
-#export ZSH_THEME="random"
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
@@ -397,3 +395,16 @@ codi() {
     hi NonText ctermfg=0 |\
     Codi $syntax" "$@"
 }
+
+# for GNU global
+export GTAGSLABEL=pygments
+
+# Tips / usage
+#
+# Mass renaming: zmv (*).txt $1.html
+#
+# Path replacement:
+#    /usr/bin $ cd bin lib
+#    /usr/lib $ # we've replaced bin with lib in the current path
+#
+#

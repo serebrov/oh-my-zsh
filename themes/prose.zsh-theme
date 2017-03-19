@@ -22,10 +22,12 @@ function box_name {
 # %{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}$(box_name)%{$reset_color%} in %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(hg_prompt_info)$(git_prompt_info)
 # $(virtualenv_info)$ '
 
+local return_status="%{$fg[red]%}%(?..⏎)%{$reset_color%}"
+
 # remove hg prompt
 PROMPT='
-%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}$(box_name)%{$reset_color%} in %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)
-$(virtualenv_info)$ '
+%T %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)
+$(virtualenv_info)$(vi_mode_prompt_info)${return_status}$ '
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
@@ -33,5 +35,5 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-local return_status="%{$fg[red]%}%(?..⏎)%{$reset_color%}"
-RPROMPT='${return_status}%{$reset_color%}$(vi_mode_prompt_info)%T'
+# RPROMPT='${return_status}%{$reset_color%}$(vi_mode_prompt_info)%T'
+RPROMPT=""
