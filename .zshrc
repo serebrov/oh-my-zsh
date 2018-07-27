@@ -221,8 +221,8 @@ bindkey "^R" history-incremental-search-backward
 ## bindkey '^[[B' down-line-or-search-prefix
 
 # http://stackoverflow.com/questions/8343166/filemanager-for-vim
-vc () 
-{ 
+vc ()
+{
     local TARGET='';
 
     [ -z "$@" ] && TARGET=. || TARGET="$@";
@@ -262,6 +262,72 @@ mirror(){ mplayer -vf mirror -v tv:// -tv device=/dev/video0:driver=v4l2; }
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/web
 source /usr/local/bin/virtualenvwrapper.sh
+
+# FZF
+# Shortcuts in the list:
+# - CTRL-T - Paste the selected file path(s) into the command line
+# - ALT-C - cd into the selected directory
+# - CTRL-R - Paste the selected command from history into the command line
+# - CTRL-R once more - toggle sort
+#
+# Matching (search text):
+# - sbtrkt - fuzzy-match - Items that match sbtrkt
+# - ^music - prefix-exact-match - Items that start with music
+# - .mp3$ - suffix-exact-match - Items that end with .mp3
+# - 'wild - exact-match (quoted) - Items that include wild
+# - !fire - inverse-exact-match - Items that do not include fire
+# - !.mp3$ - inverse-suffix-exact-match - Items that do not end with .mp3
+#
+# A single bar character term acts as an OR operator.
+# For example, the following query matches entries that start with coreand end with either go, rb, or py.
+# - ^core go$ | rb$ | py$
+#
+# Fuzzy completion for files and directories can be triggered if the word before the cursor ends
+# with the trigger sequence which is by default **.
+# - vim **<TAB> or cd **<TAB>
+#
+# Files under current directory
+# - You can select multiple items with TAB key
+# - vim **<TAB>
+# Files under parent directory
+# - vim ../**<TAB>
+# Files under parent directory that match `fzf`
+# - vim ../fzf**<TAB>
+# Files under your home directory
+# - vim ~/**<TAB>
+# Directories under current directory (single-selection)
+# - cd **<TAB>
+# Directories under ~/github that match `fzf`
+# - cd ~/github/fzf**<TAB>
+#
+# Process IDs - kill -9 <TAB>
+# Can select multiple processes with <TAB> or <Shift-TAB> keys
+#   kill -9 <TAB>
+#
+# Host names - ssh **<TAB>
+# ssh **<TAB>
+# telnet **<TAB>
+#
+# Environment variables / Aliases - export **<TAB>
+#   unset **<TAB>
+#   export **<TAB>
+#   unalias **<TAB>
+#
+# Examples · junegunn/fzf Wiki - https://github.com/junegunn/fzf/wiki/Examples
+#
+# Features enabled below in .zshrc
+# - cf dirname - fuzzy search for dir and cd to it
+# - ag_fzf - fuzzy search in files
+# - fshow - git commit browser
+# - fco - checkout git branch/tag
+# - fcoc - checkout git commit
+# - fcs - get git commit sha
+# example usage: git rebase -i `fcs`
+# - fstash - easier way to deal with stashes
+# - type fstash to get a list of your stashes
+# - enter shows you the contents of the stash
+# - ctrl-d shows a diff of the stash against your current HEAD
+# - ctrl-b checks the stash out as a branch, for easier merging
 
 #export NVIM_TUI_ENABLE_TRUE_COLOR=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
